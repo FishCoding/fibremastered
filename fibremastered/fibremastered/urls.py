@@ -16,20 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from .views import look_into_db, index
-from .views import RedirectView, ContentView, ContentEditView, ContentDeleteView, ContentDownloadView, ContentFormView
+from .views import look_into_db, index, estudis_fib, research, lafib
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    #re_path(r'^((?:[\w\-]+/)*)$', look_into_db),
-    re_path(r'^$', RedirectView.as_view(), name='redirect_landing'),
-  #  re_path(r'^(?P<slug>[-\w]*form[-\w]*)/$', ContentFormView.as_view(), name='form_view'), # allowing first layer form views
-    re_path(r'^(?P<slug>[-\w]+)/$', ContentView.as_view(), name='content_view'), # always have the contentview last because its catchall
-    # every other layer
-    re_path(r'^(?P<rest_url>([-\w]+\/)*)(?P<slug>editor)/(?P<id>\d+)/$', ContentEditView.as_view(), name='editor_view'),
-    re_path(r'^(?P<rest_url>([-\w]+\/)*)(?P<slug>delete)/(?P<id>\d+)/$', ContentDeleteView.as_view(), name='delete_view'),
-    re_path(r'^(?P<rest_url>([-\w]+\/)*)(?P<slug>download)/(?P<id>\d+)/$', ContentDownloadView.as_view(), name='download_view'),
-    re_path(r'^(?P<rest_url>([-\w]+\/)*)(?P<slug>[-\w]*form[-\w]*)/$', ContentFormView.as_view(), name='form_view'),
-    re_path(r'^(?P<rest_url>([-\w]+\/)*)(?P<slug>[-\w]+)/$', ContentView.as_view(), name='content_view'),
+    path('estudis/fib/', estudis_fib ),
+    path('recerca/', research ),
+    path('fib/', lafib ),
 ]
