@@ -1,6 +1,8 @@
 from django.contrib import admin
 
 from fibremastered.models import Site, Template
+from django.contrib import admin
+
 
 @admin.register(Site)
 class SiteAdmin(admin.ModelAdmin):
@@ -9,3 +11,4 @@ class SiteAdmin(admin.ModelAdmin):
 @admin.register(Template)
 class TemplateAdmin(admin.ModelAdmin):
     pass
+

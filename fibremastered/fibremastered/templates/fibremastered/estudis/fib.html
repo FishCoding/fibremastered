@@ -1,0 +1,122 @@
+ {% extends "fibremastered/base_layout.html" %} {% load static sitetree i18n %} {% block body %}
+<section class="hero  is-default is-bold">
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8 ">
+                    <h1 class="title is-size-1 is-bold">Grau en Informàtica</h1>
+                    <p class="is-size-5"> El Grau d’Enginyeria Informàtica impartit a la FIB proporciona els coneixements necessaris per preparar als seus estudiants pel mon laboral, incorporant des de bon inici la part pràctica. El pla d’estudis de la FIB destaca per la seva
+                        diversitat, oferint la possibilitat de graduar-se en 5 especialitats diferents.
+                    </p>
+                </div>
+            </div>
+            <!-- Start Hero Carousel -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+            <div class="columns is-centered">
+                <div class="column is-half ">
+                    <h2 class="title is-size-1 is-bold">Robòtica (ROB)</h2>
+                    <p class="is-size-5">
+                        La robòtica és una branca multidisciplinar de la enginyeria que ha facilitat enormement la vida a l’ésser humà. Aquí aprendràs com funcionen i es programen diferents tipus de robots.
+
+                    </p>
+                    <section class="carousel is-small has-carousel">
+                        <div id="carousel-demo" class="carousel">
+                            <div class="item-1 is-centered">
+                                <img style="width : auto; height: 500px;" src="{% static 'img/estudis/fib/rob1.jpg'%}">
+                            </div>
+                            <div class="item-2 has-text-centered">
+                                <img class="center" style="width : auto; height: 500px;" src="{% static 'img/estudis/fib/rob2.jpg'%}">
+                            </div>
+                            <div class="item-3 has-text-centered">
+                                <figure class="is-inline-lock">
+                                    <img style="width : auto; height: 500px; " src="{% static 'img/estudis/fib/rob3.jpg'%}">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="hero-head"></div>
+                        <div class="hero-body"></div>
+                        <div class="hero-foot"></div>
+                    </section>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                        bulmaCarousel.attach('#carousel-demo', {
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            infinite: true,
+
+                        });
+                    </script>
+
+                </div>
+
+                <div class="column is-half is-offset-1">
+                    <h2 class="title is-size-1 is-bold">Videojocs (VJ)</h2>
+                    <p class="is-size-5">
+                        Algun cop has pensat en dedicar-te als videojocs? Aquí t’introduiràs en el món del disseny i la programació de videojocs i crearàs els teus primers jocs 2D i 3D.
+                    </p>
+                    <section class="carousel is-small has-carousel">
+                        <div id="carousel2" class="carousel">
+                            <div class="item-1 is-centered">
+                                <video style="padding:20px;border:1px;" width='1280' height='960' controls>
+                                    <source src="{% static 'img/estudis/fib/vj1.mp4' type='video/mp4' %}">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="item-2 has-text-centered">
+                                <video style="padding:20px;border:1px;" width='1280' height='960' controls>
+                                    <source src="{% static 'img/estudis/fib/vj2.mp4' type='video/mp4' %}">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                        </div>
+                        <div class="hero-head"></div>
+                        <div class="hero-body"></div>
+                        <div class="hero-foot"></div>
+                    </section>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                        bulmaCarousel.attach('#carousel2', {
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            infinite: true,
+
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="columns is-centered">
+                <div class="column is-half ">
+                    <h2 class="title is-size-1 is-bold">Assignatura 3</h2>
+                    <p class="is-size-5">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed accumsan tellus, nec condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut cursus, lacus eu varius pharetra, augue purus elementum
+                        eros, eget dictum quam turpis quis diam. Donec vulputate placerat felis in malesuada. Etiam blandit dolor a gravida pulvinar.
+                    </p>
+                    <div class="has-text-centered">
+                        <img src="https://picsum.photos/200/301">
+                    </div>
+                </div>
+
+                <div class="column is-half is-offset-1">
+                    <h2 class="title is-size-1 is-bold">Assignatura 4</h2>
+                    <p class="is-size-5">
+                        Maecenas eu lectus vulputate, laoreet nulla sed, pharetra turpis. Suspendisse eu tristique nisl, eu pellentesque nisl. Cras ac nulla quis nunc pretium luctus blandit sit amet erat. In eros sapien, egestas quis cursus eget, blandit vitae libero. Quisque
+                        elementum mollis enim vitae pharetra. Cras dignissim aliquam eros, a tristique sapien rutrum et. Vivamus elementum lacus et velit porttitor accumsan.
+                    </p>
+                    <div class="has-text-centered">
+                        <img src="https://picsum.photos/200/300">
+                    </div>
+                </div>
+            </div>
+
+
+
+</section>
+
+
+
+{% endblock %}

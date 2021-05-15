@@ -16,14 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from .views import look_into_db
+from .views import look_into_db, index
 from .views import RedirectView, ContentView, ContentEditView, ContentDeleteView, ContentDownloadView, ContentFormView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
     #re_path(r'^((?:[\w\-]+/)*)$', look_into_db),
-    #re_path(r'^$', RedirectView.as_view(), name='redirect_landing'),
-    re_path(r'^(?P<slug>[-\w]*form[-\w]*)/$', ContentFormView.as_view(), name='form_view'), # allowing first layer form views
+    re_path(r'^$', RedirectView.as_view(), name='redirect_landing'),
+  #  re_path(r'^(?P<slug>[-\w]*form[-\w]*)/$', ContentFormView.as_view(), name='form_view'), # allowing first layer form views
     re_path(r'^(?P<slug>[-\w]+)/$', ContentView.as_view(), name='content_view'), # always have the contentview last because its catchall
     # every other layer
     re_path(r'^(?P<rest_url>([-\w]+\/)*)(?P<slug>editor)/(?P<id>\d+)/$', ContentEditView.as_view(), name='editor_view'),

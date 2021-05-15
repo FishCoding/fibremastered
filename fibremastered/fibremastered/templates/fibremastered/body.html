@@ -1,0 +1,146 @@
+
+<section class="hero is-fullheight is-default is-bold">
+
+    {% include "./partials/menu.html"  %}
+
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-5 is-offset-1 landing-caption">
+                    <h1 class="title is-1 is-bold is-spaced">
+                        Manage, Deploy.
+                    </h1>
+                    <h2 class="subtitle is-5 is-muted">Lorem ipsum sit dolor amet is a dummy text used by typography industry </h2>
+                    <div class="button-wrap">
+                        <a class="button cta is-rounded primary-btn raised">
+                            Get Started
+                        </a>
+                        <a class="button cta is-rounded">
+                            Discover
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-5">
+                    <figure class="image is-4by3">
+                        <img src="/img/illustrations/worker.svg" alt="Description">
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-foot mb-20">
+        <div class="container">
+            <div class="tabs is-centered">
+                <ul>
+                    <li><a><img class="partner-logo" src="/img/logo/clients/systek.svg"></a></li>
+                    <li><a><img class="partner-logo" src="/img/logo/clients/tribe.svg"></a></li>
+                    <li><a><img class="partner-logo" src="/img/logo/clients/kromo.svg"></a></li>
+                    <li><a><img class="partner-logo" src="/img/logo/clients/infinite.svg"></a></li>
+                    <li><a><img class="partner-logo" src="/img/logo/clients/gutwork.svg"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-feature-grey is-medium">
+    <div class="container">
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2">Great Power Comes </h2>
+            <h3 class="subtitle is-5 is-muted">With great Responsability</h3>
+            <div class="divider is-centered"></div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="columns">
+                <div class="column is-one-third">
+                    <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                        <div class="card-title">
+                            <h4>App builder</h4>
+                        </div>
+                        <div class="card-icon">
+                            <img src="/img/icons/web.svg">
+                        </div>
+                        <div class="card-text">
+                            <p>This is some cool explanatory text that is on two rows</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="button btn-align-md primary-btn raised">Free Trial</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                        <div class="card-title">
+                            <h4>Cloud integration</h4>
+                        </div>
+                        <div class="card-icon">
+                            <img src="/img/icons/rocket.svg">
+                        </div>
+                        <div class="card-text">
+                            <p>This is some explanatory text that is on two rows</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="button btn-align-md primary-btn raised">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                        <div class="card-title">
+                            <h4>Addons & Plugins</h4>
+                        </div>
+                        <div class="card-icon">
+                            <img src="/img/icons/light-bulb.svg">
+                        </div>
+                        <div class="card-text">
+                            <p>This is some explanatory text that is on two rows</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="button btn-align-md primary-btn raised">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div id="auth-modal" class="modal">
+    <div class="modal-background modal-dismiss"></div>
+    <div class="modal-content">
+        <div class="flex-card auth-card">
+            <div class="tabs-wrapper">
+                <div class="tabs">
+                    <ul>
+                        <li class="is-active" data-tab="login-tab"><a>Login</a></li>
+                        <li data-tab="register-tab"><a>Register</a></li>
+                    </ul>
+                </div>
+                <div id="login-tab" class="tab-content is-active">
+                    <div class="field">
+                        <label>Username</label>
+                        <div class="control">
+                            <input type="text" class="input is-medium" placeholder="Enter username">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <div class="control">
+                            <input type="password" class="input is-medium" placeholder="Enter password">
+                        </div>
+                    </div>
+
+                    <a class="button is-fullwidth secondary-btn is-rounded raised">Log in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="modal-close is-large modal-dismiss" aria-label="close"></button>
+</div>
+

@@ -1,14 +1,21 @@
 {% load sitetree %}
 
-<ul>
     {% for item in sitetree_items %}
-        <li>
-            <a href="{% sitetree_url for item %}" {% if item.hint %}title="{{ item.hint }}"{% endif %} {% if item.is_current or item.in_current_branch %}class="{{ item.is_current|yesno:'current_item ,' }}{{ item.in_current_branch|yesno:'current_branch,' }}"{% endif %}>
+        {% if item.has_children and not item.parent %}
+        <div class="navbar-item has-dropdown is-hoverable" >
+            <a class="navbar-link" href="{% sitetree_url for item %}" {% if item.hint %}title="{{ item.hint }}"{% endif %} {% if item.is_current or item.in_current_branch %}class="{{ item.is_current|yesno:'current_item ,' }}{{ item.in_current_branch|yesno:'current_branch,' }}"{% endif %}>
                 {{ item.title_resolved }} {{ item.display_title }}
             </a>
-            {% if item.has_children %}
+                <div class="navbar-dropdown">
                 {% sitetree_children of item for menu template "fibremastered/fractures/listmenu_translation.html" %}
-            {% endif %}
-        </li>
+                </div>
+        </div>
+
+
+        {% else %}
+        <a class="navbar-item "  href="{% sitetree_url for item %}" {% if item.hint %}title="{{ item.hint }}"{% endif %} {% if item.is_current or item.in_current_branch %}class="{{ item.is_current|yesno:'current_item ,' }}{{ item.in_current_branch|yesno:'current_branch,' }}"{% endif %}>
+                {{ item.title_resolved }} {{ item.display_title }}
+        </a>
+
+        {% endif %}
     {% endfor %}
-</ul>

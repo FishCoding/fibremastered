@@ -3,6 +3,8 @@ from django.contrib.contenttypes.models import ContentType
 
 from sitetree.models import TreeItemBase
 
+from django_editorjs import EditorJsField
+
 ## mediastorage formats
 FORMATS = {
     'fullscreen': (1920, 1280),
@@ -19,10 +21,11 @@ class Template(models.Model):
 
 class Site(TreeItemBase):
     display_title = models.CharField(default='', max_length=250, blank=True)
-    body = models.TextField(default='', blank=True)
+    body = EditorJsField(null=True, blank=True)
     transfer_model = models.ForeignKey(ContentType, on_delete=models.SET_NULL, null=True, blank=True)
     slug = models.SlugField(max_length=100, blank=True)
     template = models.ForeignKey(Template, on_delete=models.SET_NULL, null=True)
+
 
     class Meta:
         unique_together = []

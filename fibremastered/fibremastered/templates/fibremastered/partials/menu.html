@@ -1,0 +1,110 @@
+{% load static sitetree i18n %}
+<!--div class="inner">
+                <header class="special">
+                    <h3>{{ object.display_title }}</h3>
+                </header>
+                <div>
+                    <h4>Sitetree Menu</h4>
+                    {% if object.parent %}
+                    {% if not object.parent.parent %}
+                        {% sitetree_menu from 'root' include 'trunk' template 'fibremastered/fractures/listmenu_translation.html' %}
+                    {% else %}
+                        {% sitetree_menu from 'root' include 'this-parent-siblings' template 'fibremastered/fractures/listmenu_translation.html' %}
+                    {% endif %}
+                    {% endif %}
+                    {% sitetree_menu from 'root' include 'this-children' template 'fibremastered/fractures/listmenu_translation.html' %}
+                    {% if not object.parent %}
+                        {% sitetree_menu from 'root' include 'trunk' template 'fibremastered/fractures/listmenu_translation.html' %}
+                    {% else %}
+                        {% sitetree_menu from 'root' include 'this-siblings' template 'fibremastered/fractures/listmenu_translation.html' %}
+                    {% endif %}
+                </div>
+                <div>
+                    {% for obj in object_list %}
+                        {% include obj.template.path with object=obj %}
+                    {% endfor %}
+                </div>
+</div--!>
+
+<nav x-data="initNavbar()" class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+        <img src="https://grbio.upc.edu/en/logosfooter-en/upc/@@images/image" width="60" height="30">
+        <img src="https://www.fib.upc.edu/sites/fib/files/images/logo-fib-lletres.png" width="60" height="30">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasic" class="navbar-menu">
+        <div class="navbar-start">
+
+            {% if object.parent %}
+            {% if not object.parent.parent %}
+                {% sitetree_menu from 'root' include 'trunk' template 'fibremastered/fractures/listmenu_translation.html' %}
+            {% else %}
+                {% sitetree_menu from 'root' include 'this-parent-siblings' template 'fibremastered/fractures/listmenu_translation.html' %}
+            {% endif %}
+            {% endif %}
+            <!---{% sitetree_menu from 'root' include 'this-children' template 'fibremastered/fractures/listmenu_translation.html' %}---!>
+            {% if not object.parent %}
+                {% sitetree_menu from 'root' include 'trunk' template 'fibremastered/fractures/listmenu_translation.html' %}
+            {% else %}
+                {% sitetree_menu from 'root' include 'this-siblings' template 'fibremastered/fractures/listmenu_translation.html' %}
+            {% endif %}
+        <div>
+            {% for obj in object_list %}
+                {% include obj.template.path with object=obj %}
+            {% endfor %}
+        </div>
+
+        <!-- a class="navbar-item">
+            Home
+        </a>
+
+        <a class="navbar-item">
+            Documentation
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            More
+            </a>
+
+            <div class="navbar-dropdown">
+            <a class="navbar-item">
+                About
+            </a>
+            <a class="navbar-item">
+                Jobs
+            </a>
+            <a class="navbar-item">
+                Contact
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+                Report an issue
+            </a>
+            </div>
+        </div!-->
+        </div>
+
+        <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+            <a class="button is-primary">
+                <strong>Sign up</strong>
+            </a>
+            <a class="button is-light">
+                Log in
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</nav>

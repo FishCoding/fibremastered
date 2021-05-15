@@ -1,0 +1,192 @@
+ {% extends "fibremastered/base_layout.html" %} {% load static sitetree i18n %} {% block body %}
+<section class="hero  is-default is-bold">
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8 ">
+                    <h1 class="title is-size-1 is-bold">La FIB</h1>
+                    <p class="is-size-5"> A la universitat hi passen moltes més coses de les que us imagineu. Coneix tota l'oferta complementària d’oci i restauració que trobaràs a la FIB.
+                    </p>
+                </div>
+            </div>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+            <div class="columns is-centered">
+                <div class="column is-half ">
+                    <h2 class="title is-size-1 is-bold">Bar de la FIB</h2>
+                    <p class="is-size-5">
+                        El lloc de referència per esmorzar, dinar o simplement fer una cervesa al acabar les classes. I tot a un preu molt assequible!
+                    </p>
+                    <section style="margin:40px;" class="carousel is-small has-carousel">
+                        <div id="carousel-demo" class="carousel">
+                            <div class="item-1 has-text-centered">
+                                <img style="width : auto; height: 400px;" src="{% static 'img/fib/bar/bar1.jpg'%}">
+                            </div>
+                            <div class="item-2 has-text-centered">
+                                <img class="" style="width : auto; height: 300px;" src="{% static 'img/fib/bar/bar2.jpg'%}">
+                            </div>
+                            <div class="item-3 has-text-centered">
+                                <img class="" style="width : auto; height: 300px;" src="{% static 'img/fib/bar/bar3.jpg'%}">
+                            </div>
+                        </div>
+                        <div class="hero-head"></div>
+                        <div class="hero-body"></div>
+                        <div class="hero-foot"></div>
+                    </section>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                        bulmaCarousel.attach('#carousel-demo', {
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            infinite: true,
+
+                        });
+                    </script>
+
+                </div>
+
+                <div class="column is-half is-offset-1">
+                    <h2 class="title is-size-1 is-bold">Gimnas</h2>
+                    <p class="is-size-5">
+                        Dins del mateix campus, perfecte per anar-hi al sortir de classe. Podeu trobar màquines de tot tipus, activitats dirigides (spinning, body pump…), arts marcials, etc.
+                    </p>
+
+                    <section style="margin:40px;" class="carousel is-small has-carousel">
+                        <div id="carousel2" class="carousel">
+                            <div class="item-1 has-text-centered">
+                                <img style="width : auto; height: 300px;" src="{% static 'img/fib/gym/esports1.jpg'%}">
+                            </div>
+                            <div class="item-2 has-text-centered">
+                                <img class="" style="width : auto; height: 300px;" src="{% static 'img/fib/gym/esports2.jpg'%}">
+                            </div>
+                            <div class="item-3 has-text-centered">
+                                <video style="padding:20px;border:1px;" width='1280' height='960' controls>
+                                    <source src="{% static 'img/fib/gym/esports3.mp4' type='video/mp4' %}">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                        </div>
+                        <div class="hero-head"></div>
+                        <div class="hero-body"></div>
+                        <div class="hero-foot"></div>
+                    </section>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                        bulmaCarousel.attach('#carousel2', {
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            infinite: true,
+
+                        });
+                    </script>
+
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-half ">
+                    <h2 class="title is-size-1 is-bold">HackUPC</h2>
+                    <p class="is-size-5">
+                        Durant un parell de dies la facultat s’omple de gent de tot el món per elaborar projectes informàtics en temps rècord.
+
+                    </p>
+
+                    <section style="margin:40px;" class="carousel is-small has-carousel">
+                        <div id="carousel3" class="carousel">
+                            <div class="item-1 has-text-centered">
+                                <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/hack1.jpg'%}">
+                            </div>
+                            <div class="item-1 has-text-centered">
+                                <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/hack2.jpg'%}">
+                            </div>
+                            <div class="item-3 has-text-centered">
+                                <div class="item-1 has-text-centered">
+                                    <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/hack3.jpg'%}">
+                                </div>
+                            </div>
+                            <div class="item-4 has-text-centered">
+                                <div class="item-1 has-text-centered">
+                                    <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/hack4.jpg'%}">
+                                </div>
+                            </div>
+                            <div class="item-5 has-text-centered">
+                                <div class="item-1 has-text-centered">
+                                    <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/hack5.jpg'%}">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="hero-head"></div>
+                        <div class="hero-body"></div>
+                        <div class="hero-foot"></div>
+                    </section>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                        bulmaCarousel.attach('#carousel3', {
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            infinite: true,
+
+                        });
+                    </script>
+
+
+                </div>
+
+                <div class="column is-half is-offset-1">
+                    <h2 class="title is-size-1 is-bold">FestaFIB</h2>
+                    <p class="is-size-5">
+                        Als informàtics també ens va la marxa! Anualment celebrem la festa de la facultat amb concursos, un gran dinar i bona música durant la nit.
+                    </p>
+
+                    <section style="margin:40px;" class="carousel is-small has-carousel">
+                        <div id="carousel4" class="carousel">
+                            <div class="item-1 has-text-centered">
+                                <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/festafib1.jpg'%}">
+                            </div>
+                            <div class="item-1 has-text-centered">
+                                <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/festafib2.jpg'%}">
+                            </div>
+                            <div class="item-3 has-text-centered">
+                                <div class="item-1 has-text-centered">
+                                    <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/festafib3.jpg'%}">
+                                </div>
+                            </div>
+                            <div class="item-4 has-text-centered">
+                                <div class="item-1 has-text-centered">
+                                    <img style="width : auto; height: 300px;" src="{% static 'img/fib/vida/festafib4.jpg'%}">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="hero-head"></div>
+                        <div class="hero-body"></div>
+                        <div class="hero-foot"></div>
+                    </section>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                        bulmaCarousel.attach('#carousel4', {
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            infinite: true,
+
+                        });
+                    </script>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</section>
+
+
+
+{% endblock %}

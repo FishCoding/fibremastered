@@ -35,7 +35,6 @@ def look_into_db(request, url):
         pass
     return index(request)
 
-
 ######################################################################################
 # allowing the module to be installed without installing Weasyprint/using the Downloadview
 weasyerror=None
@@ -105,10 +104,12 @@ class ContentView(PermissionRequiredMixin, DetailView):
     def get_object(self, queryset=None):
         obj = super(ContentView, self).get_object(queryset)
         # checking for cross access
+        
         if obj.url != self.request.path_info:
             raise Http404
         # retrieving and setting the site template
         self.template_name = obj.template.template_path
+        
         if obj.transfer_model:
             self.model = apps.get_model(obj.transfer_model.app_label, obj.transfer_model.model)
             self.app_name = obj.transfer_model.app_label
@@ -197,6 +198,7 @@ class ContentFormView(PermissionRequiredMixin, SingleObjectMixin, TemplateRespon
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
+        print(self.template_name)
         return self.render_to_response(self.get_context_data())
 
     def post(self, request, *args, **kwargs):
@@ -210,7 +212,7 @@ class ContentFormView(PermissionRequiredMixin, SingleObjectMixin, TemplateRespon
         invalid = False
         for form in forms:
             if not form.is_valid():
-                invalid = True
+                invalid = TrueContentFormView
                 break
 
         if invalid:
@@ -617,6 +619,7 @@ class ContentDownloadView(PermissionRequiredMixin, SingleObjectMixin, WeasyTempl
         self.model = apps.get_model(obj.transfer_model.app_label, obj.transfer_model.model)
         self.app_name = obj.transfer_model.app_label
         self.template_name = obj.template.template_path
+        print("PEPEEPEP")
 
         return obj
 
